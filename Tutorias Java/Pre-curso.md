@@ -97,6 +97,23 @@ public class Main {
 }
 ```
 
+### Tasks herencia
+#DiamonProblem #ReferenciaCircular
+* ¿cuantas clases pueden ser heredadas?
+No se permite herencias multiples, solo se puede heredar una clase **pero** puede implementar multuples interfaces
+* ¿Que es la referencia circular/diamond problem y como evitarla?
+La referencia circular es un problema que se causa en Java no explicitamente con las multiples herencias como en caso de lenguajes que acepten esta, sino mas que todo en el caso de las interfaces.
+¿Como se soluciona?
+La solucion puede ser un Override en la clase que implementa las interfaces, para modificar el metodo dependiendo de la clase o interface que se este utilizando. O siendo explicito en la implementacion del metodo ejemplo:
+```java
+//Sintaxis `InterfaceName.super.methodName()`.
+// Llamar a la implementación de B 
+B.super.metodo(); // Salida: Método de B 
+// Llamar a la implementación de C 
+C.super.metodo(); // Salida: Método de C
+```
+
+
 
 ---
 ## Polimorfismo 
@@ -318,6 +335,16 @@ public class EjemploProtegido {
 * clases abstractas 
 * cuando interfaz cuando clase abstracta
 
+## Interfaces: 
+Las #interfaces son parecidas a las #clases estas se diferencia en que normalmente contienen metodos uno o mas , es posible crear constantes y lo recomendado es no utilizar variables, por defecto cuando se crean estas siempre vienen implicitamente con public, static y final incluso si se omiten en la declaracion de variables.
+
+---
+
+
+### <span style="color: blue;">Como lo entiendo </span>
+
+
+---
 ### <span style="color: blue;">Tercer fragmento </span>
 
 * Java casting (tipos casting) 

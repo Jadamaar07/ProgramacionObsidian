@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BACKEND I/JAVA-ENTRENAMIENTO/CLASE 3.md",
+                "file": "Tutorias Java/Pre-curso.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLASE 3"
+              "title": "Pre-curso"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9abaca44059e066c",
@@ -186,10 +187,10 @@
   },
   "active": "f715b8ae45084aad",
   "lastOpenFiles": [
+    "Tutorias Java/Glosario.md",
     "Tutorias Java/Pre-curso.md",
     "BACKEND I/JAVA-ENTRENAMIENTO/CLASE 3.md",
     "BACKEND I/JAVA-ENTRENAMIENTO/Clase 2.md",
-    "Tutorias Java/Glosario.md",
     "Tutorias Java/Glosario",
     "Diagram.svg",
     "BACKEND I/API´S/TAREAS.md",

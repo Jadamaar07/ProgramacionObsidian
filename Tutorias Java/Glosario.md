@@ -3,3 +3,6 @@
 #clases 
 #herencia 
 #objetos 
+#DiamonProblem 
+#ReferenciaCircular
+#overriding
