@@ -9,3 +9,9 @@ Modificadores de acceso
 ### Hablando de los contstructores dependiendo la logica de negocio:
 Dejar un constructor vacio es mala practica para la logica de negocios dependiendo igual de esta , se ve como un objeto invalido.
 
+## Presentacion Static keyword #StaticKeyword
+Los atributos estaticos son disponibles para todas las clases, en camio lo que no lo son no cumplen esto 
+Los atributos estaticos seran unicos para esa instancia
+Los atributos estaticos comparten entre objetos si, instancia 
+**No puedo acceder a un atributo de instancia desde un contexto estatico 
+
