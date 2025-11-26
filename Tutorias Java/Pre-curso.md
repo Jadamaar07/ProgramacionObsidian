@@ -6,6 +6,8 @@
 
 ### <span style="color: blue;">Como lo entiendo:  </span>
 Las #clases son moldes especificos que definen directamente el comportamiento de un Objeto 
+
+---
 # Teoría de Clases en Java y en General
 
 La programación orientada a objetos (POO) es un paradigma que utiliza "clases" y "objetos" para organizar el código y facilitar su mantenimiento y reutilización. En Java, las clases son uno de los conceptos fundamentales de este paradigma. A continuación, se presenta una explicación sobre las clases en Java y en general.
@@ -27,6 +29,9 @@ Una **clase** es una plantilla o un modelo que define las características y com
 ## Objetos
 ### <span style="color: blue;">Como lo entiendo:  </span>
 Los #objetos son la instanciacion de la clase mediante el contructor.
+
+
+---
 # Teoría de Objetos en Java y en General
 
 En la programación orientada a objetos (POO), un **objeto** es una instancia de una clase. Los objetos son fundamentales para este paradigma, ya que representan entidades del mundo real y encapsulan tanto datos como comportamientos. A continuación, se presenta una explicación sobre los objetos en Java y en general.
@@ -52,6 +57,8 @@ Un **objeto** es una unidad que combina estado (atributos) y comportamiento (mé
 
 ### <span style="color: blue;">Como lo entiendo:  </span>
 La #herencia es la forma de acceder de una clase a otra, compartir sus metodos y sus atributos en mejores palabras heredaralas.
+
+---
 # Resumen de Herencia en Programación Orientada a Objetos
 
 La **herencia** es uno de los conceptos fundamentales de la programación orientada a objetos (POO) que permite crear una nueva clase basada en una clase existente. La clase que se hereda se llama **clase base** o **clase padre**, y la nueva clase se llama **clase derivada** o **clase hija**. La herencia promueve la reutilización del código y establece una relación jerárquica entre las clases.
@@ -119,6 +126,8 @@ C.super.metodo(); // Salida: Método de C
 ## Polimorfismo 
 ### <span style="color: blue;">Como lo entiendo:  </span> (~~Parcialmente correcto~~)
 El #polimorfismo es la el cambio o la mutacion de los metodos de una clase a un Objeto instanciado por una clase diferente. 
+
+---
 # Resumen de Polimorfismo en Programación Orientada a Objetos
 
 El **polimorfismo** es uno de los conceptos fundamentales de la programación orientada a objetos (POO) que permite que una misma operación se comporte de diferentes maneras según el objeto que la invoque. El término "polimorfismo" proviene del griego y significa "muchas formas". Este concepto es esencial para lograr flexibilidad y extensibilidad en el diseño de software.
@@ -212,6 +221,8 @@ El polimorfismo es un concepto clave en la programación orientada a objetos que
 ## Encapsulamiento
 ### <span style="color: blue;">Como lo entiendo:  </span>
  El #encapsulamiento es la forma de proteger metodos, parametros y atributos, que no sean accesibles para todos los packcage dependiendo la situacion, donde encontramos public, private y protected 
+
+---
 # Resumen de Encapsulamiento en Programación Orientada a Objetos
 
 El **encapsulamiento** es uno de los principios fundamentales de la programación orientada a objetos que se refiere a la práctica de restringir el acceso a ciertos componentes de un objeto y proteger su estado interno. Este concepto ayuda a mantener la integridad de los datos y a ocultar la complejidad del sistema.
@@ -336,12 +347,190 @@ public class EjemploProtegido {
 * cuando interfaz cuando clase abstracta
 
 ## Interfaces: 
+### <span style="color: blue;">Como lo entiendo </span> 
 Las #interfaces son parecidas a las #clases estas se diferencia en que normalmente contienen metodos uno o mas , es posible crear constantes y lo recomendado es no utilizar variables, por defecto cuando se crean estas siempre vienen implicitamente con public, static y final incluso si se omiten en la declaracion de variables.
 
+
 ---
+# Resumen del Artículo "Java Interfaces"
+
+## Introducción a las Interfaces en Java
+
+Las interfaces en Java son un tipo de referencia que permite definir un contrato que las clases deben seguir. Una interfaz puede contener métodos abstractos (sin implementación) y métodos por defecto (con implementación). Las interfaces son fundamentales para la programación orientada a objetos, ya que permiten la creación de código más flexible y reutilizable.
+
+## Características de las Interfaces
+
+1. **Métodos Abstractos**:
+   - Las interfaces pueden contener métodos abstractos, que son métodos sin cuerpo. Las clases que implementan la interfaz deben proporcionar una implementación para estos métodos.
+   - Ejemplo:
+     ```java
+     interface Animal {
+         void hacerSonido(); // Método abstracto
+     }
+     
+     ### Implementación de la Interfaz en Clases
+     
+     class Perro implements Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau"); // Implementación del método para Perro
+    }
+}
+
+class Gato implements Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Miau"); // Implementación del método para Gato
+    }
+}
+	### Uso de las Clases
+
+ public class Main {
+    public static void main(String[] args) {
+        Animal miPerro = new Perro(); // Crear un objeto de tipo Perro
+        Animal miGato = new Gato(); // Crear un objeto de tipo Gato
+
+        miPerro.hacerSonido(); // Salida: Guau
+        miGato.hacerSonido(); // Salida: Miau
+    }
+}    
+     ```
+
+2. **Métodos por Defecto**:
+   - Desde Java 8, las interfaces pueden incluir métodos por defecto, que tienen una implementación. Esto permite agregar nuevos métodos a las interfaces sin romper las clases existentes que ya las implementan.
+   - Ejemplo:
+     ```java
+     interface Animal {
+         void hacerSonido(); // Método abstracto
+
+         default void dormir() {
+             System.out.println("El animal está durmiendo.");
+         }
+     }
+     
+     ### Implementación de la Interfaz en Clases
+     class Perro implements Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau"); // Implementación del método para Perro
+    }
+}
+
+class Gato implements Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Miau"); // Implementación del método para Gato
+    }
+}
+### Uso de las Clases
+
+public class Main {
+    public static void main(String[] args) {
+        Animal miPerro = new Perro(); // Crear un objeto de tipo Perro
+        Animal miGato = new Gato(); // Crear un objeto de tipo Gato
+
+        miPerro.hacerSonido(); // Salida: Guau
+        miGato.hacerSonido(); // Salida: Miau
+
+        miPerro.dormir(); // Salida: El animal está durmiendo.
+        miGato.dormir(); // Salida: El animal está durmiendo.
+    }
+}
+     ```
+
+3. **Métodos Estáticos**:
+   - Las interfaces pueden contener métodos estáticos que se pueden llamar sin necesidad de instanciar la interfaz. Estos métodos son útiles para proporcionar utilidades relacionadas con la interfaz.
+   - Ejemplo:
+     ```java
+     interface Utilidades {
+         static void imprimirMensaje(String mensaje) {
+             System.out.println(mensaje);
+         }
+     }
+     
+     #### Uso del Método Estático en la Interfaz
+     public class Main {
+    public static void main(String[] args) {
+        // Llamar al método estático directamente desde la interfaz
+        Utilidades.imprimirMensaje("Hola, este es un mensaje desde un método estático en una interfaz.");
+    }
+}
+     ```
+
+4. **Herencia de Interfaces**:
+   - Las interfaces pueden extender otras interfaces, lo que permite crear jerarquías de interfaces. Una clase puede implementar múltiples interfaces, lo que permite la herencia múltiple de comportamientos.
+   - Ejemplo:
+     ```java
+		// Interfaz base
+interface Animal {
+    void hacerSonido(); // Método abstracto
+}
+
+// Interfaz que hereda de Animal
+interface Volador extends Animal {
+    void volar(); // Método abstracto adicional
+}
+#### Implementación de la Herencia de Interfaces en una Clase
+class Pajaro implements Volador {
+    @Override
+    public void hacerSonido() {
+        System.out.println("El pájaro canta."); // Implementación del método de Animal
+    }
+
+    @Override
+    public void volar() {
+        System.out.println("El pájaro está volando."); // Implementación del método de Volador
+    }
+}
+#### Uso de la Clase que Implementa la Herencia de Interfaces
+public class Main {
+    public static void main(String[] args) {
+        Volador miPajaro = new Pajaro(); // Crear un objeto de tipo Pajaro
+        miPajaro.hacerSonido(); // Salida: El pájaro canta.
+        miPajaro.volar(); // Salida: El pájaro está volando.
+    }
+}
+
+     ```
+
+5. **No se Pueden Instanciar**:
+   - Las interfaces no pueden ser instanciadas directamente. En su lugar, las clases que implementan la interfaz son las que se instancian.
+   - Ejemplo:
+     ```java
+     // Animal animal = new Animal(); // Esto no es válido
+     ```
+
+## Ejemplo de Uso
+
+El artículo proporciona ejemplos de cómo definir y utilizar interfaces en Java. Se muestra cómo una clase puede implementar múltiples interfaces y cómo se pueden utilizar métodos por defecto.
+
+```java
+interface Vehiculo {
+    void conducir(); // Método abstracto
+
+    default void encender() {
+        System.out.println("El vehículo está encendido.");
+    }
+}
+
+class Coche implements Vehiculo {
+    @Override
+    public void conducir() {
+        System.out.println("Conduciendo un coche.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Coche miCoche = new Coche();
+        miCoche.encender(); // Salida: El vehículo está encendido.
+        miCoche.conducir(); // Salida: Conduciendo un coche.
+    }
+}
+````
 
 
-### <span style="color: blue;">Como lo entiendo </span>
+
 
 
 ---
