@@ -54,7 +54,7 @@ Un **objeto** es una unidad que combina estado (atributos) y comportamiento (mé
 
 ---
 ## Herencia ( cuantas clases pueden ser heredadas ) (estudiar referencia circular y como lo evito)
-
+	
 ### <span style="color: blue;">Como lo entiendo:  </span>
 La #herencia es la forma de acceder de una clase a otra, compartir sus metodos y sus atributos en mejores palabras heredaralas.
 
@@ -530,8 +530,165 @@ public class Main {
 ````
 
 
+### Tasks: 
+* ¿Cuantas clases pueden implementar una interfaz?
+En Java, una interfaz puede ser implementada por múltiples clases. No hay un límite en la cantidad de clases que pueden implementar una misma interfaz. Esto permite que diferentes clases compartan un contrato común, lo que facilita la programación orientada a objetos y la reutilización de código.
+* ¿Como puedo definir una implementacion en especifico si estas tienen varias?
+Si la interfaz cuenta con mupltiples implementaciones la opcion para implementarla en especifico es utilizando la anotacion #ovrride @Override oara modificar el metodo implementado.
+
+# Clases Abstractas en Java
+#ClasesAbstractas
+## Introducción
+
+Una **clase abstracta** en Java es una clase que no se puede instanciar directamente y que puede contener métodos abstractos (sin implementación) y métodos concretos (con implementación). Las clases abstractas se utilizan como base para otras clases, permitiendo definir un comportamiento común que las subclases deben seguir.
+
+## Características de las Clases Abstractas
+
+1. **No se Pueden Instanciar**: No puedes crear objetos de una clase abstracta directamente. Debes crear una subclase que implemente los métodos abstractos.
+
+2. **Métodos Abstractos**: Una clase abstracta puede contener métodos abstractos, que son métodos sin cuerpo. Las subclases deben proporcionar una implementación para estos métodos.
+
+3. **Métodos Concretos**: Además de métodos abstractos, una clase abstracta puede tener métodos concretos que tienen una implementación. Las subclases pueden usar estos métodos tal como están o sobreescribirlos.
+
+4. **Constructores**: Las clases abstractas pueden tener constructores, que se utilizan para inicializar atributos comunes en las subclases.
+
+5. **Herencia**: Las clases abstractas pueden ser extendidas por otras clases, permitiendo la herencia de comportamiento y atributos.
+
+## Ejemplo de Clase Abstracta
+
+### Definición de la Clase Abstracta
+
+```java
+abstract class Animal {
+    String nombre;
+
+    // Constructor
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Método abstracto
+    public abstract void hacerSonido();
+
+    // Método concreto
+    public void dormir() {
+        System.out.println(nombre + " está durmiendo.");
+    }
+}
+
+### Implementación de la Clase Abstracta en Subclases
+class Perro extends Animal {
+    public Perro(String nombre) {
+        super(nombre); // Llamar al constructor de la clase base
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau"); // Implementación del método abstracto
+    }
+}
+
+class Gato extends Animal {
+    public Gato(String nombre) {
+        super(nombre); // Llamar al constructor de la clase base
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println("Miau"); // Implementación del método abstracto
+    }
+}
+### Uso de las Clases Abstractas y Subclases
+public class Main {
+    public static void main(String[] args) {
+        Animal miPerro = new Perro("Rex"); // Crear un objeto de tipo Perro
+        Animal miGato = new Gato("Miau"); // Crear un objeto de tipo Gato
+
+        miPerro.hacerSonido(); // Salida: Guau
+        miGato.hacerSonido(); // Salida: Miau
+
+        miPerro.dormir(); // Salida: Rex está durmiendo.
+        miGato.dormir(); // Salida: Miau está durmiendo.
+    }
+}
+
+```
 
 
+---
+
+# Cuando usar clases abstractas y cuando usar interfaz
+
+# Clases Abstractas vs. Interfaces en Java
+
+## Cuándo Utilizar una Clase Abstracta
+
+1. **Comportamiento Común**:
+   - Utiliza una clase abstracta cuando varias clases comparten un comportamiento común y deseas proporcionar una implementación base que las subclases pueden heredar.
+   - **Ejemplo**: Si tienes una clase `Animal` que tiene un método `dormir()` que es común a todas las subclases, puedes definirlo en una clase abstracta.
+
+2. **Métodos Abstractos y Concretos**:
+   - Si necesitas definir métodos abstractos (sin implementación) y también proporcionar algunos métodos concretos (con implementación) que las subclases pueden usar o sobreescribir, una clase abstracta es adecuada.
+   - **Ejemplo**: La clase `Animal` puede tener un método abstracto `hacerSonido()` y un método concreto `dormir()`.
+
+3. **Estado Compartido**:
+   - Si las clases que heredan de la clase abstracta necesitan compartir atributos (estado), es apropiado utilizar una clase abstracta. Las clases abstractas pueden tener campos (atributos) que se pueden inicializar en el constructor.
+   - **Ejemplo**: La clase `Animal` puede tener un atributo `nombre` que todas las subclases deben tener.
+
+4. **Relación "Es-Un"**:
+   - Utiliza una clase abstracta cuando existe una relación "es-un" clara entre la clase abstracta y las subclases. Por ejemplo, un `Perro` es un `Animal`.
+
+## Cuándo Utilizar una Interfaz
+
+1. **Contratos de Comportamiento**:
+   - Utiliza una interfaz cuando deseas definir un contrato que varias clases pueden implementar, sin importar su relación jerárquica. Las interfaces son ideales para definir comportamientos que pueden ser compartidos por clases no relacionadas.
+   - **Ejemplo**: Una interfaz `Volador` puede ser implementada por `Pájaro`, `Avión`, y `Murciélago`, que no tienen una relación directa entre sí.
+
+2. **Múltiples Implementaciones**:
+   - Si una clase necesita implementar múltiples comportamientos, las interfaces son la mejor opción, ya que Java permite que una clase implemente múltiples interfaces.
+   - **Ejemplo**: Una clase `Pájaro` puede implementar tanto la interfaz `Volador` como la interfaz `Animal`.
+
+3. **Métodos por Defecto**:
+   - Desde Java 8, las interfaces pueden tener métodos por defecto, lo que permite proporcionar implementaciones comunes sin romper las clases existentes. Si necesitas agregar funcionalidad a una interfaz sin afectar a las implementaciones existentes, utiliza métodos por defecto.
+   - **Ejemplo**: Una interfaz `Animal` puede tener un método por defecto `dormir()`.
+
+4. **Desacoplamiento**:
+   - Utiliza interfaces para promover el desacoplamiento en tu diseño. Esto permite que las clases interactúen a través de interfaces, lo que facilita la prueba y el mantenimiento del código.
+   - **Ejemplo**: Una clase `ControlRemoto` puede interactuar con cualquier clase que implemente la interfaz `Dispositivo`, sin necesidad de conocer la implementación específica.
+
+## Resumen
+
+- **Clases Abstractas**:
+  - Se utilizan cuando hay un comportamiento común que se puede compartir.
+  - Permiten métodos abstractos y concretos.
+  - Pueden tener estado (atributos) y constructores.
+  - Se utilizan para establecer una relación "es-un".
+
+- **Interfaces**:
+  - Se utilizan para definir contratos de comportamiento que pueden ser implementados por clases no relacionadas.
+  - Permiten la implementación de múltiples interfaces.
+  - Pueden tener métodos por defecto (desde Java 8).
+  - Promueven el desacoplamiento y la flexibilidad en el diseño.
+
+## Ejemplo Comparativo
+
+**Clase Abstracta**:
+```java
+abstract class Animal {
+    String nombre;
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public abstract void hacerSonido();
+    
+    public void dormir() {
+        System.out.println(nombre + " está durmiendo.");
+    }
+}
+
+```
 
 ---
 ### <span style="color: blue;">Tercer fragmento </span>
