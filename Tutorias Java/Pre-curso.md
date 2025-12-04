@@ -30,6 +30,8 @@ Una **clase** es una plantilla o un modelo que define las características y com
 ### <span style="color: blue;">Como lo entiendo:  </span>
 Los #objetos son la instanciacion de la clase mediante el contructor.
 
+list.of(metodo estatico de la intefaz lista)
+
 
 ---
 # Teoría de Objetos en Java y en General
@@ -104,23 +106,47 @@ public class Main {
 }
 ```
 
-### Tasks herencia
+## Tasks herencia
 #DiamonProblem #ReferenciaCircular
 * ¿cuantas clases pueden ser heredadas?
 No se permite herencias multiples, solo se puede heredar una clase **pero** puede implementar multuples interfaces
-* ¿Que es la referencia circular/diamond problem y como evitarla?
+* ¿Que es el diamond problem y como evitarla?
 La referencia circular es un problema que se causa en Java no explicitamente con las multiples herencias como en caso de lenguajes que acepten esta, sino mas que todo en el caso de las interfaces.
 ¿Como se soluciona?
 La solucion puede ser un Override en la clase que implementa las interfaces, para modificar el metodo dependiendo de la clase o interface que se este utilizando. O siendo explicito en la implementacion del metodo ejemplo:
 ```java
-//Sintaxis `InterfaceName.super.methodName()`.
+//Sintaxis 
+##InterfaceName.super.methodName().
 // Llamar a la implementación de B 
 B.super.metodo(); // Salida: Método de B 
 // Llamar a la implementación de C 
 C.super.metodo(); // Salida: Método de C
 ```
+* ¿Que es referencia circular y como solucionarlo?
+La referencia circular se ve cuando dos clases se referencian entre si creando un ciclo mediante atributos de tipo Clase, al momento de crear la instancia de alguna de las dos clases, de esta manera se produce el problema de la referencia circular.
+```java
+class Persona {
+    private String nombre;
+    private Direccion direccion;
 
+    public Persona(String nombre, Direccion direccion) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+    }
+}
 
+class Direccion {
+    private String calle;
+    private Persona persona;
+
+    public Direccion(String calle, Persona persona) {
+        this.calle = calle;
+        this.persona = persona;
+    }
+}
+
+```
+La solucion es eliminar al menos una de las dos referencias.
 
 ---
 ## Polimorfismo 
@@ -695,6 +721,88 @@ abstract class Animal {
 
 * Java casting (tipos casting) 
 * Java Genericos (que son y que solucionan) estos nacen en Java 5.
+
+# ¿Qué es Java Casting y qué tipos hay?
+
+Java Casting se refiere al proceso de convertir un tipo de dato en otro. Es una práctica común en programación, especialmente en Java, donde se trabaja con diferentes tipos de datos y objetos.
+
+## Tipos de Casting en Java
+
+Existen dos tipos principales de casting en Java:
+
+### 1. **Casting Implícito (Widening Casting)**
+
+- **Descripción**: Ocurre automáticamente cuando se convierte un tipo de dato más pequeño a uno más grande. No se pierde información.
+- **Ejemplo**: Convertir un `int` a `double`.
+  
+  ```java
+  int numero = 10;
+  double decimal = numero; // Casting implícito
+  ````
+  ```
+### 2. **Casting Explícito (Narrowing Casting)**
+
+- **Descripción**: Requiere una conversión explícita y puede implicar la pérdida de información. Se utiliza cuando se convierte un tipo de dato más grande a uno más pequeño.
+    
+- **Ejemplo**: Convertir un `double` a `int`.
+    
+    java
+    
+    `double decimal = 10.5; int numero = (int) decimal; // Casting explícito`
+    
+
+## Casting de Objetos
+
+En Java, el casting también se aplica a objetos, especialmente en el contexto de la herencia:
+
+- **Casting hacia abajo (Downcasting)**: Convertir un objeto de una clase padre a una clase hija. Puede causar `ClassCastException` si el objeto no es realmente una instancia de la clase hija.
+    
+    ``` java
+    
+    
+    Animal animal = new Perro(); Perro perro = (Perro) animal; // Downcasting
+  ```  
+- **Casting hacia arriba (Upcasting)**: Convertir un objeto de una clase hija a una clase padre. Este tipo de casting es seguro y no requiere conversión explícita.
+    
+    ```java
+    
+    Perro perro = new Perro(); Animal animal = perro; // Upcasting
+    ```
+
+## Conclusión
+
+Java Casting es esencial para trabajar con diferentes tipos de datos y objetos. Comprender los tipos de casting y cuándo utilizarlos es fundamental para evitar errores y garantizar un código eficiente y seguro.
+
+
 ---
 ## ***EXTRA***
 ***PARA VER EN CLASE (patrones de diseño)
+
+
+---
+## Checklist de Tareas
+
+### Clases
+- [x] Clases
+- [x] Objetos
+- [x] Herencia (cuántas clases pueden ser heredadas) (estudiar referencia circular y cómo evitarla)
+- [x] Polimorfismo
+- [x] Encapsulamiento
+
+---
+
+### Interfaz
+- [x] Interfaz (cuántas clases pueden implementar una interfaz, cómo puedo definir una implementación en específico si estas tienen varias)
+- [x] Clases abstractas
+- [x] Cuándo usar interfaz y cuándo usar clase abstracta
+
+---
+
+### Java
+- [x] Java casting (tipos de casting)
+- [ ] Java genéricos (qué son y qué solucionan; estos nacen en Java 5)
+
+---
+
+### Para ver en clase
+- [ ] Patrones de diseño

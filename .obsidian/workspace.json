@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "eb274f6875c6d1a5",
+        "id": "a8aef274e6988d6a",
         "type": "tabs",
         "children": [
           {
-            "id": "880c33c79674bac0",
+            "id": "9c9932480860b5c6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -74,13 +74,11 @@
               "title": "Marcadores"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9abaca44059e066c",
@@ -171,25 +169,35 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "880c33c79674bac0",
+  "active": "9c9932480860b5c6",
   "lastOpenFiles": [
+    "BACKEND I/JAVA-ENTRENAMIENTO/Clase 5.md",
+    "BACKEND I/JAVA-ENTRENAMIENTO/JAVA-ENTRENAMIENTO.md",
+    "BACKEND I/API´S/API´S.md",
+    "BACKEND I/API´S/General.md",
+    "BACKEND I/API´S/Criterios.md",
+    "BACKEND I/POO/POO.md",
+    "Diagram.svg.xml",
+    "Diagram.svg",
+    "Sin título 1.base",
+    "Sin título.base",
+    "BACKEND I/JAVA-ENTRENAMIENTO/Clase 1, INTRODUCCION.md",
+    "Tutorias Java/Pre-curso.md",
+    "BACKEND I/JAVA-ENTRENAMIENTO/Clase 4.md",
+    "BACKEND I/API´S/Metodos HTTP.md",
     "Mentorias-Jose/Miercoles 26.md",
     "Tutorias Java/Glosario.md",
     "Sin título.md",
-    "Tutorias Java/Pre-curso.md",
     "Mentorias-Jose",
     "BACKEND I/JAVA-ENTRENAMIENTO/CLASE 3.md",
     "BACKEND I/JAVA-ENTRENAMIENTO/Clase 2.md",
     "Tutorias Java/Glosario",
-    "Diagram.svg",
     "BACKEND I/API´S/TAREAS.md",
     "Tutorias Java",
     "BACKEND I/Untitled.md",
-    "BACKEND I/API´S/General.md",
     "fullstack-roadmap/DAY 3.md",
     "BACKEND I/Practicando Java/Road Map/Java String.md",
     "BACKEND I/Practicando Java/HERENCIA.md",
-    "BACKEND I/JAVA-ENTRENAMIENTO/Clase 1, INTRODUCCION.md",
     "Temario/CESDE.md",
     "fullstack-roadmap/DAY 13.md",
     "Temario",
@@ -197,9 +205,7 @@
     "fullstack-roadmap/DAY 10.md",
     "INGLES.md",
     "DOM.md",
-    "fullstack-roadmap/DAY 2.md",
     "fullstack-roadmap",
-    "JavaScript/Day 9 -JavaScript begginer.md",
     "JavaScript",
     "fullstack-roadmap/dia-9-checkpoint/styles/style.css",
     "fullstack-roadmap/dia-9-checkpoint/media/twitter-logo.svg",
@@ -211,15 +217,7 @@
     "fullstack-roadmap/dia-9-checkpoint/media/camera-slash.svg",
     "fullstack-roadmap/dia-9-checkpoint/media/article-two-image.png",
     "fullstack-roadmap/dia-9-checkpoint/media/article-three-image.png",
-    "fullstack-roadmap/dia-9-checkpoint/styles",
-    "fullstack-roadmap/dia-9-checkpoint/media",
-    "fullstack-roadmap/dia-9-checkpoint/app.js",
-    "fullstack-roadmap/README.md",
     "Untitled.canvas",
-    "Untitled 1.canvas",
-    "BACKEND I/API´S/Modelo vista controlador - MVC.md",
-    "BACKEND I/API´S/Criterios.md",
-    "BACKEND I/POO/Abtraccion.md",
-    "BACKEND I/POO/Encapsulamiento.md"
+    "Untitled 1.canvas"
   ]
 }

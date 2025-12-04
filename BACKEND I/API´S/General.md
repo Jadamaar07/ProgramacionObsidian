@@ -4,6 +4,7 @@
 * C# - .Net
 * Python - Django, Fast API
 * PHP - Laravel 
+[[Glosario]]
 
 
 API + SERVDIDORES:
@@ -36,4 +37,27 @@ TAREA COLE, TAREA
 Todas las anotaciones haciendo las 3 tables y las configuraciones de las tablas 
 
 
+
+El servidor envia
+Respuestas 
+El clliente envia
+Peticiones (request)
+
+¿Porque un cliente quiere comunicarse con la db? 
+### Peticiones
+* Headers(Cabeceras)-Por fuera
+		 - Endpoins y datos
+* Body(Datos)-Por dentro
+		-
+
+### Servidor
+
+Uri = url/ep/
+
+Para programar API´s se utilizan arquitecturas
+La mas comun que se utiliza es MVC "Modelo Vista Controlador"
+En el que contiene
+
+Arquitectura de capas:
+Desventaja aplicacion acoplada(Si una muere las otras tambien)
 
